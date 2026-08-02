@@ -1,0 +1,127 @@
+
+[env]
+TERM = "alacritty"
+
+[terminal.shell]
+program = "/run/current-system/sw/bin/zsh"
+args = ["-l"]
+
+[terminal]
+osc52 = "OnlyCopy"
+
+[window]
+padding = { x = 6, y = 6 }                   
+dynamic_padding = true
+decorations = "None"                         
+opacity = 0.25                               
+blur = false                                 
+startup_mode = "Windowed"                    
+title = "Alacritty"
+dynamic_title = true
+class = { instance = "Alacritty", general = "Alacritty" }
+decorations_theme_variant = "Dark"
+resize_increments = false                    
+
+[scrolling]
+history = 100000
+multiplier = 3
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }
+size = 10.0
+offset = { x = 0, y = 0 }          
+glyph_offset = { x = 0, y = 0 }    
+builtin_box_drawing = true
+
+[colors.primary]
+foreground = "#ffffff"
+background = "#000000"
+bright_foreground = "#ffffff"
+
+[colors.cursor]
+text = "#000000"
+cursor = "#ffffff"
+
+[colors.normal]
+black   = "#000000"  
+red     = "#ff3b3b"  
+green   = "#3dff8f"  
+yellow  = "#ffd84d"  
+blue    = "#4da3ff"  
+magenta = "#ff5fd7"  
+cyan    = "#4dffff"  
+white   = "#e6e6e6"  
+
+[colors.bright]
+black   = "#7a7a7a"
+red     = "#ff6b6b"
+green   = "#7dffb2"
+yellow  = "#ffe680"
+blue    = "#7db8ff"
+magenta = "#ff8fe8"
+cyan    = "#8fffff"
+white   = "#ffffff"
+
+[colors.dim]
+black   = "#0a0a0a"
+red     = "#8f2f2f"
+green   = "#2f8f5f"
+yellow  = "#8f7f2f"
+blue    = "#2f5f8f"
+magenta = "#7f2f8f"
+cyan    = "#2f8f8f"
+white   = "#9a9a9a"
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = true
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = "None"
+blink_interval = 750
+blink_timeout = 5
+unfocused_hollow = true
+thickness = 0.25
+
+[mouse]
+hide_when_typing = true
+bindings = []
+
+[hints]
+alphabet = "asdfjklghqwertyuiopzxcvbnm"
+
+[[hints.enabled]]
+hyperlinks = true
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^ \n\t<>\"']+"
+post_processing = true
+persist = false
+mouse = { enabled = false }
+binding = { key = "O", mods = "Control|Shift" }
+command = "xdg-open"
+
+[keyboard]
+bindings = [
+    # Copy / Paste
+    { key = "C", mods = "Control|Shift", action = "Copy" },
+    { key = "V", mods = "Control|Shift", action = "Paste" },
+    # New window
+    { key = "N", mods = "Control|Shift", action = "CreateNewWindow" },
+    # Search mode
+    { key = "F", mods = "Control|Shift", action = "SearchForward" },
+    # Font controls (optional)
+    { key = "=", mods = "Control", action = "IncreaseFontSize" },
+    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    { key = "0", mods = "Control", action = "ResetFontSize" },
+    # Disable stupid behaviour
+    { key = "Q", mods = "Control", action = "None" },
+]
+
+[general]
+live_config_reload = true
+working_directory = "/home/apophis" 
+ipc_socket = false
+

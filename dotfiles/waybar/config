@@ -1,0 +1,66 @@
+{
+    "spacing": 4, // Gaps between modules (4px)
+    "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["pulseaudio", "network", "cpu", "disk", "memory", "clock", "tray"],
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "tray": {
+       "icon-size": 12,
+    "spacing": 2
+  },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "\uf4bc {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "\uefc5 {percentage}%"
+    },
+    "disk": {
+	"interval": 30,
+	"format": "\uf0c7 {specific_used:0.2f}GB/{specific_total:0.2f}GB",
+	"unit": "GB"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "\uf028 {volume}%",
+        "format-muted": "\ueee8 {format_source}",
+        "format-source": "\uf028 {volume}%",
+        "on-click": "pavucontrol"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 30,
+        "format-icons": {
+            "default": ""
+        },
+        "escape": true,
+    }
+}
+
